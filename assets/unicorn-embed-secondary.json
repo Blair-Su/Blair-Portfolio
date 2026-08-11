@@ -1,0 +1,206 @@
+{
+  "history": [
+    {
+      "breakpoints": [],
+      "visible": true,
+      "aspectRatio": 1,
+      "userDownsample": 1,
+      "layerType": "effect",
+      "type": "gradient",
+      "usesPingPong": false,
+      "speed": 0.25,
+      "trackMouse": 0,
+      "mouseMomentum": 0,
+      "animating": false,
+      "isMask": 0,
+      "compiledFragmentShaders": [
+        "#version 300 es\nprecision highp float;in vec2 vTextureCoord;uniform vec2 uMousePos; vec3 getColor(int index) { switch(index) { case 0: return vec3(0, 0, 0); case 1: return vec3(0, 0, 0); case 2: return vec3(0, 0, 0); case 3: return vec3(0, 0, 0); case 4: return vec3(0, 0, 0); case 5: return vec3(0, 0, 0); case 6: return vec3(0, 0, 0); case 7: return vec3(0, 0, 0); case 8: return vec3(0, 0, 0); case 9: return vec3(0, 0, 0); case 10: return vec3(0, 0, 0); case 11: return vec3(0, 0, 0); case 12: return vec3(0, 0, 0); case 13: return vec3(0, 0, 0); case 14: return vec3(0, 0, 0); case 15: return vec3(0, 0, 0); default: return vec3(0.0); } }const float PI = 3.14159265;vec2 rotate(vec2 coord, float angle) { float s = sin(angle); float c = cos(angle); return vec2( coord.x * c - coord.y * s, coord.x * s + coord.y * c ); }out vec4 fragColor;vec3 getColor(vec2 uv) {return vec3(0, 0, 0); }void main() {vec2 uv = vTextureCoord; vec2 pos = vec2(0.4270488410596027, 0.41887417218543055) + mix(vec2(0), (uMousePos-0.5), 0.0000); uv -= pos; uv /= (0.5000*2.); uv = rotate(uv, (0.0000 - 0.5) * 2. * PI); vec4 color = vec4(getColor(uv), 1.); fragColor = color; }"
+      ],
+      "compiledVertexShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = aTextureCoord; }"
+      ],
+      "data": {
+        "downSample": 0.5,
+        "depth": false,
+        "uniforms": {},
+        "isBackground": true
+      }
+    },
+    {
+      "breakpoints": [],
+      "visible": true,
+      "locked": false,
+      "aspectRatio": 1,
+      "layerName": "",
+      "userDownsample": 1,
+      "isElement": true,
+      "opacity": 1,
+      "effects": [],
+      "displace": 0,
+      "trackMouse": 0,
+      "anchorPoint": "center",
+      "mouseMomentum": 0,
+      "blendMode": "NORMAL",
+      "bgDisplace": 0,
+      "mask": 0,
+      "maskBackground": {
+        "type": "Vec3",
+        "_x": 0,
+        "_y": 0,
+        "_z": 0
+      },
+      "maskAlpha": 0,
+      "maskDepth": 0,
+      "dispersion": 0,
+      "axisTilt": 0,
+      "states": {
+        "appear": [],
+        "scroll": [],
+        "hover": []
+      },
+      "layerType": "image",
+      "imageLoaded": false,
+      "width": 1680.5,
+      "widthMode": "fixed",
+      "height": 1136.7575,
+      "heightMode": "fixed",
+      "left": 0.27222222222222225,
+      "leftMode": "relative",
+      "top": 0.2906902777777778,
+      "topMode": "relative",
+      "rotation": 0.5444444444444444,
+      "fitToCanvas": 0,
+      "src": "assets/ruffle1_silk_18-2.png",
+      "naturalWidth": 2500,
+      "naturalHeight": 1767,
+      "compiledFragmentShaders": [
+        "#version 300 es\nprecision mediump float; in vec2 vTextureCoord; in vec3 vVertexPosition;uniform sampler2D uBgTexture; uniform sampler2D uTexture; uniform vec2 uMousePos; uniform int uSampleBg;out vec4 fragColor;void main() { vec2 uv = vTextureCoord; vec2 pos = mix(vec2(0), (uMousePos - 0.5), 0.0000);uv = uv - pos;vec4 color = texture(uTexture, uv); vec4 background = vec4(0);if(uSampleBg == 1) { background = texture(uBgTexture, vTextureCoord); }color = mix(background, color / max(color.a, 0.0001), color.a * 1.0000);fragColor = color; }"
+      ],
+      "compiledVertexShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix; uniform vec2 uMousePos;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { float angleX = uMousePos.y * 0.5 - 0.25; float angleY = (1.-uMousePos.x) * 0.5 - 0.25;mat4 rotateX = mat4(1.0, 0.0, 0.0, 0.0, 0.0, cos(angleX), -sin(angleX), 0.0, 0.0, sin(angleX), cos(angleX), 0.0, 0.0, 0.0, 0.0, 1.0); mat4 rotateY = mat4(cos(angleY), 0.0, sin(angleY), 0.0, 0.0, 1.0, 0.0, 0.0, -sin(angleY), 0.0, cos(angleY), 0.0, 0.0, 0.0, 0.0, 1.0);mat4 rotationMatrix = rotateX * rotateY; gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vVertexPosition = (rotationMatrix * vec4(aVertexPosition, 1.0)).xyz; vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+      ],
+      "data": {
+        "uniforms": {}
+      }
+    },
+    {
+      "breakpoints": [],
+      "visible": true,
+      "aspectRatio": 1,
+      "userDownsample": 1,
+      "layerType": "effect",
+      "type": "sdf_shape",
+      "usesPingPong": false,
+      "texture": {
+        "name": "supabase-logo-icon1.svg",
+        "sampler": "uCustomTexture",
+        "svgSrc": "https://firebasestorage.googleapis.com/v0/b/unicorn-studio.appspot.com/o/Ngcnjd1NxSND5Rn0KqmsL0iFzaj2%2Fsupabase-logo-icon1.svg?alt=media&token=418900de-ac4b-4b0f-8170-7378c6961485",
+        "src": "assets/supabase-logo-icon1_combined_1749237584055.png",
+        "thumb": "https://firebasestorage.googleapis.com/v0/b/unicorn-studio.appspot.com/o/Ngcnjd1NxSND5Rn0KqmsL0iFzaj2%2Fsupabase-logo-icon1_%40thumbnail.svg?alt=media&token=418900de-ac4b-4b0f-8170-7378c6961485"
+      },
+      "speed": 0.5,
+      "trackMouseMove": 0,
+      "mouseMomentum": 0.5,
+      "trackMouse": 0,
+      "animating": true,
+      "isMask": 0,
+      "compiledFragmentShaders": [
+        "#version 300 es\nprecision highp float; precision highp int;in vec2 vTextureCoord; uniform sampler2D uTexture; uniform sampler2D uCustomTexture;uniform float uTime;uniform vec2 uMousePos; uniform vec2 uResolution;uint fibonacciHash(uint x) { const uint FIB_HASH = 2654435769u; uint hash = x * FIB_HASH; hash ^= hash >> 16; hash *= 0x85ebca6bu; hash ^= hash >> 13; hash *= 0xc2b2ae35u; hash ^= hash >> 16; return hash; }float randFibo(vec2 xy) { uint x_bits = floatBitsToUint(xy.x); uint y_bits = floatBitsToUint(xy.y); uint y_hash = fibonacciHash(y_bits); uint x_xor_y = x_bits ^ y_hash; uint final_hash = fibonacciHash(x_xor_y); return float(final_hash) / float(0xffffffffu); }const float PI = 3.141592653; const float PI2 = 6.283185306; const float DISP_STEPS = 12.; const vec3 viewDir = vec3(0,0, -4.25);ivec2 customTexSize; float customTexAspect;const mat3 ROT_Y_90 = mat3( 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 0.0 );const mat3 ROT_Z_90 = mat3( 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 );const mat3 ROT_X_90 = mat3( 1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0 );mat3 rotY(float ang) { float c = cos(ang), s = sin(ang); return mat3(c, 0.0, s, 0.0, 1.0, 0.0, -s, 0.0, c); }mat3 rotX(float ang) { float c = cos(ang), s = sin(ang); return mat3(1.0, 0.0, 0.0, 0.0, c, -s, 0.0, s, c); }mat3 rotZ(float ang) { float c = cos(ang), s = sin(ang); return mat3(c, -s, 0.0, s, c, 0.0, 0.0, 0.0, 1.0); }vec3 twistY(vec3 p, float amount) { float c = cos(amount * p.y); float s = sin(amount * p.y); mat2 m = mat2(c, -s, s, c); return vec3(m * p.xz, p.y); }vec3 twistX(vec3 p, float amount) { float c = cos(amount * p.x); float s = sin(amount * p.x); mat2 m = mat2(c, -s, s, c); return vec3(p.x, m * p.yz); }float opExtrusion(vec3 p, float d, float h) { vec2 w = vec2( d, abs(p.z) - h ); return min(max(w.x,w.y),0.0) + length(max(w,0.0)); }float sdStar5(vec2 p, float r, float rf) { const vec2 k1 = vec2(0.809016994375, -0.587785252292); const vec2 k2 = vec2(-k1.x,k1.y); p.x = abs(p.x); p -= 2.0*max(dot(k1,p),0.0)*k1; p -= 2.0*max(dot(k2,p),0.0)*k2; p.x = abs(p.x); p.y -= r; vec2 ba = rf*vec2(-k1.y,k1.x) - vec2(0,1); float h = clamp( dot(p,ba)/dot(ba,ba), 0.0, r ); return length(p-ba*h) * sign(p.y*ba.x-p.x*ba.y); }float median(float r, float g, float b) { return max(min(r, g), min(max(r, g), b)); }float sdCustom(vec3 p) { p *= rotX(radians(90.0)); p *= rotY(radians(180.0)); p *= rotZ(radians(180.0)); vec2 uv = p.xy * 0.25 + 0.5; if (customTexAspect > 1.0) { uv.y = (uv.y - 0.5) * customTexAspect + 0.5; } else { uv.x = (uv.x - 0.5) / customTexAspect + 0.5; }vec4 sdColor = texture(uCustomTexture, uv); float msdf = median(sdColor.r, sdColor.g, sdColor.b); float sdf = sdColor.a; float sd = msdf; if(sdf < 1.) { float tuning = 0.023; sd = mix(msdf, max(msdf - tuning, sdf), sdf); }float screenPxDistance = sd - 0.5; float d = -screenPxDistance;return opExtrusion(p, d, 0.1800 * 0.5); }vec3 getRepeat(vec3 p) { float spacing = (0.5000 + 0.0000 * 0.38) * 8.; return p; }vec3 getThreeDRepeat(vec3 p) { float spacing = (0.5000 + 0.0000 * 0.38) * 8.; return p; }vec3 getAdjustedP(vec3 p) { float scale = max(0.4000, 0.000000001); float scaleFactor = 1.0/scale; vec3 adjustedP = p * scaleFactor;vec2 twist = vec2(0, 0);adjustedP.xy *= vec2(uResolution.x / uResolution.y, 1);adjustedP *= (1. + (0.0000 + 0.01));vec2 mousePos = mix(vec2(0), uMousePos - 0.5, 0.0000); vec2 axis = vec2(-1. * vec3(1.0944444444444446, -0.027777777777777776, 0).y - 1. + mousePos.y/PI, vec3(1.0944444444444446, -0.027777777777777776, 0).x + mousePos.x/PI) * 2.;adjustedP = getRepeat(adjustedP);float baseTime = uTime * 0.02; float timeX = vec3(0, 1, 0).x * baseTime; float timeY = vec3(0, 1, 0).y * baseTime; float timeZ = vec3(0, 1, 0).z * baseTime;mat3 rotYMat = rotY(axis.y * PI); mat3 rotXMat = rotX(axis.x * PI); mat3 rotZMat = rotZ(vec3(1.0944444444444446, -0.027777777777777776, 0).z * 2.0 * PI);mat3 combinedRotation = rotZMat * rotYMat * rotXMat; mat3 combinedAnimation = rotZ(timeZ) * rotX(timeX) * rotY(timeY);adjustedP = combinedRotation * adjustedP; adjustedP = combinedAnimation * adjustedP; adjustedP = getThreeDRepeat(adjustedP); adjustedP = mix(adjustedP, twistY(adjustedP, -1.0 * twist.y), step(0.0, abs(twist.y))); adjustedP = mix(adjustedP, twistX(adjustedP, -1.0 * twist.x), step(0.0, abs(twist.x)));return adjustedP; }float getMergedSDF(vec3 p) { p = getAdjustedP(p); return sdCustom(p); }float fresnel(vec3 eyeVector, vec3 worldNormal, float power) { float NdotV = abs(dot(eyeVector, worldNormal)); float width = fwidth(dot(eyeVector, worldNormal)); float threshold = 0.2; float edgeDampFactor = smoothstep(threshold, -threshold, width); float fresnelFactor = 1.0 - NdotV; return pow(fresnelFactor, power) * mix(1., edgeDampFactor * 2., 0.5); }vec3 noFrostOrDispersion(vec3 rd, vec3 normal) { float ior = 1.0 / (1.0 + 0.4700 * 0.25); vec3 refractedRay = refract(rd, normal, ior); return texture(uTexture, vTextureCoord - refractedRay.xy).rgb; }vec3 calculateNormal(vec3 p, float eps) { vec2 e = vec2(eps, 0.0); vec3 normal = normalize(vec3( getMergedSDF(p + e.xyy) - getMergedSDF(p - e.xyy), getMergedSDF(p + e.yxy) - getMergedSDF(p - e.yxy), getMergedSDF(p + e.yyx) - getMergedSDF(p - e.yyx) )); return normal; }vec3 sampleTexture(vec3 rd, vec3 normal) { return noFrostOrDispersion(rd, normal); }float scene(vec3 p) { return max(0.0000000001, getMergedSDF(p) - (0.0000 + 0.005)) * max(0.4000, 0.000000001); }const int STEPS = 128; const float MAX_DISTANCE = 100.0;vec4 rayMarch(vec3 ro, vec3 rd) { float pixelSize = 0.0025; float traveled = 0.; vec3 entryPoint = vec3(0.0); vec3 entryNormal = vec3(0.0); float partialAlpha = 0.0; float lastDistance = 0.0; float smoothing = mix(1., 4., 0.2000);for (int i = 0; i < STEPS; ++i) { vec3 currentPos = ro + rd * traveled; float distance = scene(currentPos); float progress = float(i)/float(STEPS); float step = distance * mix(1., 1.5, progress);if (distance > MAX_DISTANCE) break;if (distance < pixelSize) { partialAlpha = 1.; entryPoint = currentPos; entryNormal = calculateNormal(entryPoint, pixelSize * smoothing); break; }lastDistance = distance;traveled += max(step, pixelSize); if (traveled > MAX_DISTANCE) break; }if (partialAlpha == 0.0) { return vec4(0); }vec4 bg = texture(uTexture, vTextureCoord);vec3 samplePosition = mix(rd, entryPoint, 0.0000); vec3 refractionColor = sampleTexture(samplePosition, entryNormal); vec3 lightDir = vec3(((vec2(vec3(0.25, 0.25, -3).x, 1.-vec3(0.25, 0.25, -3).y) - 0.333) * 3.) - vec2(0.527421357615894, 0.5107615894039735), vec3(0.25, 0.25, -3).z); vec3 normLightDir = normalize(lightDir);float lightAndShadow = dot(entryNormal, normLightDir); vec3 lightColor = mix(vec3(1), vec3(0.24313725490196078, 0.8117647058823529, 0.5568627450980392), 1. - 0.3300); vec3 fresnelEffect = fresnel(rd, entryNormal, 8.0) * 0.4100 * vec3(0.24313725490196078, 0.8117647058823529, 0.5568627450980392);vec3 halfwayDir = normalize(lightDir + rd); float specFactor = pow(max(dot(entryNormal, halfwayDir), 0.0), 64.0 * 0.4200 + 0.01); vec3 specularEffect = specFactor * 0.4200 * lightColor;vec3 combinedEffects = fresnelEffect + specularEffect; vec3 finalColor = mix(refractionColor, vec3(0.24313725490196078, 0.8117647058823529, 0.5568627450980392) * lightAndShadow, 0.3300); finalColor += combinedEffects;vec4 outputColor = vec4(finalColor, 1.);return outputColor; }out vec4 fragColor;void main() { vec4 col = vec4(0);customTexSize = textureSize(uCustomTexture, 0); customTexAspect = float(customTexSize.x) / float(customTexSize.y);if(float(customTexSize.x) == float(uResolution.x) && float(customTexSize.y) == float(uResolution.y)) { discard; }if(0.4000 <= 0.0001) { col = vec4(0); if(0 == 1) { col = texture(uTexture, vTextureCoord); } fragColor = col; return; }vec2 pos = vec2(0.527421357615894, 0.5107615894039735) + mix(vec2(0), (uMousePos-0.5), 0.0000); vec2 uv = vTextureCoord - pos; float fovFactor = tan(radians(20.) * 0.5); vec3 rd = vec3(uv * fovFactor, 0.5); col = rayMarch(viewDir, rd); float dither = (randFibo(vTextureCoord.xy) - 0.5) / 255.0; col += dither; fragColor = col;}"
+      ],
+      "compiledVertexShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+      ],
+      "data": {
+        "depth": false,
+        "uniforms": {},
+        "isBackground": false
+      }
+    },
+    {
+      "breakpoints": [],
+      "visible": true,
+      "aspectRatio": 1,
+      "userDownsample": 1,
+      "layerType": "effect",
+      "type": "pixelate",
+      "usesPingPong": false,
+      "trackMouse": 0,
+      "mouseMomentum": 0,
+      "animating": false,
+      "isMask": 0,
+      "compiledFragmentShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 vVertexPosition; in vec2 vTextureCoord; uniform sampler2D uTexture; uniform vec2 uMousePos; uniform vec2 uResolution;out vec4 fragColor; void main() { vec2 uv = vTextureCoord; float aspectRatio = uResolution.x/uResolution.y; vec2 pos = vec2(0.5, 0.5) + mix(vec2(0), (uMousePos-0.5), 0.0000); float gridSize = (0.0900 + 0.01) * 0.083; float baseGrid = 1.0 / gridSize; vec2 cellSize = vec2(1.0/(baseGrid * aspectRatio), 1.0/baseGrid) * mix(aspectRatio, 1./aspectRatio, 0.5); vec2 offsetUv = uv - pos; vec2 cell = floor(offsetUv / cellSize); vec2 cellCenter = (cell + 0.5) * cellSize; vec2 pixelatedCoord = cellCenter + pos; vec2 relativePos = mod(offsetUv, cellSize) / cellSize - 0.5; float dist = length(relativePos); float x = mix(uv.x, pixelatedCoord.x, vec2(1, 1).x); float y = mix(uv.y, pixelatedCoord.y, vec2(1, 1).y); vec4 color = texture(uTexture, vec2(x, y)); float edgeSmoothing = 0.02; float alpha = 1.0 - smoothstep(1.0000 - edgeSmoothing, 1.0000, dist); if(1 == 1) { color.rgb = mix(vec3(0, 0, 0), color.rgb, alpha); } else { color.a *= alpha; }color *= color.a; fragColor = color;}"
+      ],
+      "compiledVertexShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+      ],
+      "data": {
+        "depth": false,
+        "uniforms": {},
+        "isBackground": false
+      }
+    },
+    {
+      "breakpoints": [],
+      "visible": true,
+      "aspectRatio": 1,
+      "userDownsample": 1,
+      "layerType": "effect",
+      "type": "dither",
+      "usesPingPong": false,
+      "speed": 0.5,
+      "animating": false,
+      "mouseMomentum": 0,
+      "isMask": 0,
+      "compiledFragmentShaders": [
+        "#version 300 es\nprecision highp float; precision highp int;in vec3 vVertexPosition; in vec2 vTextureCoord;uniform sampler2D uTexture;uniform float uTime;uniform vec2 uResolution;uint fibonacciHash(uint x) { const uint FIB_HASH = 2654435769u; uint hash = x * FIB_HASH; hash ^= hash >> 16; hash *= 0x85ebca6bu; hash ^= hash >> 13; hash *= 0xc2b2ae35u; hash ^= hash >> 16; return hash; }float randFibo(vec2 xy) { uint x_bits = floatBitsToUint(xy.x); uint y_bits = floatBitsToUint(xy.y); uint y_hash = fibonacciHash(y_bits); uint x_xor_y = x_bits ^ y_hash; uint final_hash = fibonacciHash(x_xor_y); return float(final_hash) / float(0xffffffffu); }const int MAX_LEVEL = 4; const float PI2 = 6.28318530718;vec2 rotate2D(vec2 position, float angle) { float s = sin(angle); float c = cos(angle); return mat2(c, -s, s, c) * position; }float getBayerFromCoordLevelScaled(vec2 pixelpos, float scale) { float finalBayer = 0.0; float finalDivisor = 0.0; float layerMult = 1.0;for(float bayerLevel = float(MAX_LEVEL); bayerLevel >= 1.0; bayerLevel--) { float bayerSize = exp2(bayerLevel) * 0.5 / scale; vec2 bayercoord = mod(floor(pixelpos.xy / bayerSize), 2.0); layerMult *= 4.0;float byxx2 = bayercoord.x * 2.0;finalBayer += mix(byxx2, 3.0 - byxx2, bayercoord.y) / 3.0 * layerMult; finalDivisor += layerMult; }return (finalBayer / finalDivisor - 0.006); }float getBayerNoise(vec2 st, float delta, float scale) { vec2 center = uResolution * 0.5; vec2 centered = st * uResolution - center; float snapAngle = floor(delta) * (PI2 * 0.125); vec2 rotated = rotate2D(centered, snapAngle); vec2 final = (rotated + center); return getBayerFromCoordLevelScaled(final, scale); }vec3 dither(vec3 color, vec2 st) { float delta = floor(uTime); vec2 offset = vec2(randFibo(vec2(123,16) + delta), randFibo(vec2(56,96) + delta)); float noise = 0.0; noise = getBayerNoise(st, delta, 0.25); float dither_threshold = max(0.0001, 0.5000); float num_levels = 1.0 / dither_threshold; return floor(color * num_levels + noise) / num_levels; }out vec4 fragColor;void main() { vec2 uv = vTextureCoord; float delta = floor(uTime); vec4 color = texture(uTexture, uv);if(color.a == 0.) { fragColor = vec4(0); return; }color.rgb = mix(color.rgb, dither(color.rgb, vTextureCoord), 0.5000); fragColor = color;}"
+      ],
+      "compiledVertexShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+      ],
+      "data": {
+        "depth": false,
+        "uniforms": {},
+        "isBackground": false,
+        "texture": {
+          "src": "assets/blue_noise_med.png",
+          "sampler": "uBlueNoise"
+        }
+      }
+    },
+    {
+      "breakpoints": [],
+      "visible": true,
+      "aspectRatio": 1,
+      "userDownsample": 1,
+      "layerType": "effect",
+      "type": "coloration",
+      "usesPingPong": false,
+      "animating": false,
+      "mouseMomentum": 0,
+      "isMask": 0,
+      "compiledFragmentShaders": [
+        "#version 300 es\nprecision highp float;in vec3 vVertexPosition; in vec2 vTextureCoord;uniform sampler2D uTexture;vec3 getFilteredColor(vec3 color) { return color; }float hueToRgb(float p, float q, float t) { if (t < 0.0) t += 1.0; if (t > 1.0) t -= 1.0; if (t < 1.0 / 6.0) return p + (q - p) * 6.0 * t; if (t < 1.0 / 2.0) return q; if (t < 2.0 / 3.0) return p + (q - p) * (2.0 / 3.0 - t) * 6.0; return p; }vec3 hslToRgb(vec3 hsl) { float h = hsl.x; float s = hsl.y; float l = hsl.z; vec3 rgb = vec3(l); if (s != 0.0) { float q = l < 0.5 ? l * (1.0 + s) : l + s - l * s; float p = 2.0 * l - q; rgb.r = hueToRgb(p, q, h + 1.0 / 3.0); rgb.g = hueToRgb(p, q, h); rgb.b = hueToRgb(p, q, h - 1.0 / 3.0); } return rgb; }vec3 rgbToHsl(vec3 rgb) { float max = max(max(rgb.r, rgb.g), rgb.b); float min = min(min(rgb.r, rgb.g), rgb.b); float h, s, l = (max + min) / 2.0;if (max == min) { h = s = 0.0; } else { float d = max - min; s = l > 0.5 ? d / (2.0 - max - min) : d / (max + min); if (max == rgb.r) { h = (rgb.g - rgb.b) / d + (rgb.g < rgb.b ? 6.0 : 0.0); } else if (max == rgb.g) { h = (rgb.b - rgb.r) / d + 2.0; } else if (max == rgb.b) { h = (rgb.r - rgb.g) / d + 4.0; } h /= 6.0; }return vec3(h, s, l); }out vec4 fragColor;void main() { vec2 uv = vTextureCoord; vec4 color = texture(uTexture, uv); color.rgb = rgbToHsl(color.rgb); color.x = fract(color.x + 1.9261); color.y = clamp(color.y * 1.0000, 0.0, 1.0); color.z = clamp(color.z + 0.0000, 0.0, 1.0); color.rgb = hslToRgb(color.rgb); if(1 > 0) { color.rgb = getFilteredColor(color.rgb); } color.rgb = 1.0000 * (color.rgb - 0.5) + 0.5; color.r = clamp(color.r + 0.0000, 0.0, 1.0); color.b = clamp(color.b - 0.0000, 0.0, 1.0);color = vec4(clamp(color.rgb, 0.0, 1.0), color.a); fragColor = color;}"
+      ],
+      "compiledVertexShaders": [
+        "#version 300 es\nprecision mediump float;in vec3 aVertexPosition; in vec2 aTextureCoord;uniform mat4 uMVMatrix; uniform mat4 uPMatrix; uniform mat4 uTextureMatrix;out vec2 vTextureCoord; out vec3 vVertexPosition;void main() { gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0); vTextureCoord = (uTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy; }"
+      ],
+      "data": {
+        "depth": false,
+        "uniforms": {},
+        "isBackground": false
+      }
+    }
+  ],
+  "options": {
+    "name": "Untitled project",
+    "fps": 60,
+    "dpi": 1.5,
+    "scale": 1,
+    "includeLogo": false,
+    "isProduction": false,
+    "freePlan": false
+  },
+  "version": "1.4.25",
+  "id": "RdKuWFs6PShcnLFo6cRf"
+}
