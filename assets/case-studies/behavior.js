@@ -2,6 +2,18 @@
   const activeRoot = () => [...document.querySelectorAll('.case-breakpoint')].find(el => el.getClientRects().length);
   const target = id => [...(activeRoot()?.querySelectorAll('[data-anchor]') || [])].find(el => el.dataset.anchor === id);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.case-phone [data-source$="l8HodM7QO"]').forEach(frame => {
+    const artwork = document.createElement('div');
+    artwork.className = 'case-mobile-artwork';
+    artwork.append(...frame.childNodes);
+    frame.append(artwork);
+    new ResizeObserver(() => {
+      artwork.style.transform = `scale(${frame.clientWidth / 806})`;
+    }).observe(frame);
+  });
+  document.querySelectorAll('article a').forEach(link => {
+    if (link.textContent.trim() === 'Prototype link') link.classList.add('case-prototype-link');
+  });
   document.querySelectorAll('[data-source$="fqen_ppT1"]').forEach(diagram => {
     const image = document.createElement('img');
     image.src = './assets/case-studies/lighthouse-research-meal-flow.png';
