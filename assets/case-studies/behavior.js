@@ -2,6 +2,15 @@
   const activeRoot = () => [...document.querySelectorAll('.case-breakpoint')].find(el => el.getClientRects().length);
   const target = id => [...(activeRoot()?.querySelectorAll('[data-anchor]') || [])].find(el => el.dataset.anchor === id);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('[data-source$="fqen_ppT1"]').forEach(diagram => {
+    const image = document.createElement('img');
+    image.src = './assets/case-studies/lighthouse-research-meal-flow.png';
+    image.alt = 'Before meal: find a restaurant, check glucose, and take insulin (injection/medication). After meal: monitor glucose afterward and take prescribed medication or insulin if needed.';
+    image.width = 3464;
+    image.height = 850;
+    image.className = 'case-research-meal-flow';
+    diagram.replaceWith(image);
+  });
   document.querySelectorAll('article > .case-node > [data-layer="Divider"]').forEach(divider => {
     const section = divider.parentElement;
     [...section.children].forEach(child => {
