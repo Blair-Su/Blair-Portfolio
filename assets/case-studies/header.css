@@ -1,0 +1,279 @@
+.portfolio-header { position: fixed; top: 42px; left: 0px; right: 0px; width: 100%; display: flex; justify-content: center; align-items: center; color: rgb(3, 28, 37); font-family: Geist, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 0px; z-index: 2147483647 !important; }
+.header-blur-layer { position: fixed; left: 0px; right: 0px; top: 0px; height: 96px; background: linear-gradient(rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05) 58%, rgba(255, 255, 255, 0)); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); mask-image: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 58%, rgba(0, 0, 0, 0.55) 78%, transparent 100%); opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000; }
+body.is-content-scrolled .header-blur-layer { opacity: 1; }
+.portfolio-header-menu { height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 0px; padding: 0px 18px; border: 1px solid rgba(34, 34, 34, 0.14); box-sizing: border-box; border-radius: 12px; background: rgba(255, 255, 255, 0.58); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: none; }
+.portfolio-header-nav-link { position: relative; z-index: 1; height: 54px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border: 0px; padding: 0px 16px; color: inherit; text-decoration: none; font-family: Geist, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1; letter-spacing: 0px; white-space: nowrap; background: transparent; box-shadow: none; opacity: 0.86; transition: opacity 0.18s; }
+.portfolio-header-nav-link:hover { opacity: 1; color: rgba(3, 28, 37, 0.48); }
+.portfolio-header-divider { display: block; width: 1px; height: 26px; margin: 0px 18px; background: rgba(3, 28, 37, 0.14); flex: 0 0 auto; }
+.portfolio-header-resume { opacity: 0.9; gap: 6px; }
+.portfolio-header-resume-icon { width: 14px; height: 14px; display: block; opacity: 0.82; flex: 0 0 auto; }
+@media screen and (max-width: 900px) {
+.portfolio-header { left: 52px; right: 52px; width: auto; top: 18px; font-size: 16px; }
+.portfolio-header-menu { padding: 0px 8px; }
+.portfolio-header-nav-link { padding: 0px 14px; }
+.portfolio-header-divider { margin: 0px 10px; }
+}
+@media screen and (max-width: 767px) {
+.header-blur-layer { height: 76px; }
+.portfolio-header { top: 18px; left: 28px; right: 28px; width: auto; font-size: 14px; }
+.portfolio-header-menu { width: 100%; height: 44px; padding: 0px 8px; border-radius: 9px; }
+.portfolio-header-nav-link { height: 44px; font-size: 14px; padding: 0px 9px; }
+.portfolio-header-divider { height: 20px; margin: 0px 6px; }
+}
+@media screen and (min-width: 901px) {
+.portfolio-header { top: 24px; }
+.header-blur-layer { height: 88px; }
+.portfolio-header-menu { height: 48px; padding: 0px 14px; border-radius: 10px; }
+.portfolio-header-nav-link { height: 48px; padding: 0px 14px; }
+.portfolio-header-divider { height: 22px; margin: 0px 12px; }
+}
+.portfolio-header { z-index: 2147483647 !important; position: fixed !important; top: 28px !important; left: 0px !important; right: 0px !important; width: 100% !important; display: flex !important; justify-content: center !important; align-items: center !important; pointer-events: none !important; font-family: Geist, Arial, sans-serif !important; line-height: 1 !important; }
+.portfolio-header-layout { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 15px !important; pointer-events: auto !important; }
+.portfolio-header-logo-link { display: inline-flex !important; align-items: center !important; justify-content: center !important; flex: 0 0 auto !important; width: 50px !important; height: 50px !important; padding: 0px 9px !important; text-decoration: none !important; border-radius: 14px !important; overflow: hidden !important; background: rgb(255, 255, 255) !important; border: 1px solid rgba(255, 255, 255, 0.68) !important; box-sizing: border-box !important; }
+.portfolio-header-logo-link:hover { transform: none !important; }
+.portfolio-header-logo-text { display: block !important; color: rgb(107, 204, 255) !important; font-family: "Snell Roundhand", "Snell Roundhand Script", cursive !important; font-size: 35px !important; font-weight: 900 !important; line-height: 0.86 !important; letter-spacing: 0px !important; -webkit-text-stroke: 0.45px rgb(107, 204, 255) !important; text-shadow: currentcolor 0px 0px 0.01px !important; transform: translateY(1px) !important; }
+.portfolio-header-liquid { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 15px !important; padding: 14px 28px !important; border-radius: 14px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; }
+.portfolio-header-liquid .portfolio-header-nav-link { display: inline-flex !important; align-items: center !important; justify-content: center !important; height: auto !important; min-height: 0px !important; padding: 0px !important; border: 0px !important; background: transparent !important; box-shadow: none !important; color: rgba(24, 24, 27, 0.78) !important; font-family: Geist, Arial, sans-serif !important; font-size: 17px !important; font-weight: 500 !important; line-height: 1 !important; letter-spacing: 0px !important; white-space: nowrap !important; text-decoration: none !important; opacity: 1 !important; transition: color 0.18s !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:hover { color: rgba(24, 24, 27, 0.42) !important; transform: none !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:active, .portfolio-header-liquid .portfolio-header-nav-link:focus { color: rgba(24, 24, 27, 0.6) !important; transform: none !important; }
+.portfolio-header-project-wrap { position: relative !important; display: inline-flex !important; align-items: center !important; }
+.portfolio-header-project-trigger { appearance: none !important; font: inherit !important; cursor: pointer !important; gap: 4px !important; }
+.portfolio-header-chevron { width: 12px !important; height: 12px !important; display: block !important; flex: 0 0 auto !important; opacity: 0.72 !important; color: currentcolor !important; transition: transform 0.18s, opacity 0.18s, color 0.18s !important; }
+.portfolio-header-project-wrap.is-open .portfolio-header-chevron { transform: rotate(180deg) !important; opacity: 1 !important; }
+.portfolio-header-project-menu { position: absolute !important; top: calc(100% + 14px) !important; left: 50% !important; width: 306px !important; padding: 8px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; border-radius: 10px !important; background: rgba(255, 255, 255, 0.72) !important; box-shadow: rgba(3, 28, 37, 0.1) 0px 14px 32px, rgba(255, 255, 255, 0.74) 0px 1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.25) !important; backdrop-filter: blur(22px) saturate(1.25) !important; opacity: 0 !important; pointer-events: none !important; transform: translate(-50%, -4px) !important; transition: opacity 0.18s, transform 0.18s !important; }
+.portfolio-header-project-wrap.is-open .portfolio-header-project-menu { opacity: 1 !important; pointer-events: auto !important; transform: translate(-50%, 0px) !important; }
+.portfolio-header-project-item { display: flex !important; align-items: center !important; gap: 12px !important; min-height: 48px !important; padding: 7px 9px !important; border-radius: 9px !important; color: rgba(24, 24, 27, 0.78) !important; font-family: Geist, Arial, sans-serif !important; font-size: 15px !important; font-weight: 500 !important; line-height: 1.1 !important; text-decoration: none !important; white-space: nowrap !important; transition: background-color 0.16s, color 0.16s !important; }
+.portfolio-header-project-item:hover { background: rgba(24, 24, 27, 0.08) !important; color: rgba(24, 24, 27, 0.9) !important; }
+.portfolio-header-project-icon-wrap { width: 34px !important; height: 34px !important; display: block !important; flex: 0 0 34px !important; border-radius: 8px !important; overflow: hidden !important; background: rgb(255, 255, 255) !important; }
+.portfolio-header-project-icon { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+.portfolio-header-resume-link { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 1px !important; flex: 0 0 auto !important; padding: 14px 28px !important; border-radius: 14px !important; border: 1px solid rgba(255, 255, 255, 0.68) !important; background: rgb(255, 255, 255) !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; color: rgb(107, 204, 255) !important; font-family: Geist, Arial, sans-serif !important; font-size: 17px !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: 0px !important; text-decoration: none !important; white-space: nowrap !important; transition: color 0.18s !important; }
+.portfolio-header-resume-link:hover { color: rgba(107, 204, 255, 0.62) !important; transform: none !important; }
+.portfolio-header-resume-link:active, .portfolio-header-resume-link:focus { color: rgb(255, 255, 255) !important; transform: none !important; }
+.portfolio-header-resume-arrow { display: block !important; width: 20px !important; height: 20px !important; flex: 0 0 auto !important; }
+.portfolio-header-resume-arrow path { stroke-width: 2.6 !important; }
+.portfolio-header-menu-toggle, .portfolio-header-mobile-panel { display: none !important; }
+.portfolio-header-menu, .portfolio-header-divider, .portfolio-header-resume, .portfolio-header-resume-icon, .portfolio-header-resume-img { display: none !important; }
+@media screen and (max-width: 900px) {
+.portfolio-header { top: 24px !important; }
+.portfolio-header-layout { gap: 15px !important; }
+.portfolio-header-logo-link { width: 50px !important; height: 50px !important; }
+.portfolio-header-logo-text { font-size: 35px !important; }
+.portfolio-header-liquid { gap: 15px !important; padding: 14px 24px !important; border-radius: 12px !important; }
+.portfolio-header-liquid .portfolio-header-nav-link { font-size: 17px !important; }
+.portfolio-header-resume-link { padding: 14px 24px !important; border-radius: 12px !important; font-size: 17px !important; }
+.portfolio-header-resume-arrow { width: 18px !important; height: 18px !important; }
+}
+@media screen and (max-width: 767px) {
+.portfolio-header { top: 18px !important; left: 28px !important; right: 28px !important; width: auto !important; justify-content: center !important; }
+.portfolio-header-layout { width: 100% !important; display: flex !important; align-items: flex-start !important; justify-content: space-between !important; gap: 0px !important; position: relative !important; }
+.portfolio-header-logo-link { width: 52px !important; height: 52px !important; padding: 0px 9px !important; border-radius: 10px !important; }
+.portfolio-header-logo-text { font-size: 35px !important; -webkit-text-stroke: 0.45px rgb(107, 204, 255) !important; text-shadow: currentcolor 0px 0px 0.01px !important; transform: translateY(1px) !important; }
+.portfolio-header-liquid, .portfolio-header-resume-link { display: none !important; }
+.portfolio-header-menu-toggle { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 52px !important; height: 52px !important; padding: 0px !important; border-radius: 10px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; background: rgba(107, 204, 255, 0.72) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; appearance: none !important; }
+.portfolio-header-menu-toggle span { display: block !important; width: 20px !important; height: 2px !important; border-radius: 999px !important; background: rgb(255, 255, 255) !important; position: absolute !important; transition: transform 0.2s, opacity 0.2s !important; }
+.portfolio-header-menu-toggle span:nth-child(1) { transform: translateY(-7px) !important; }
+.portfolio-header-menu-toggle span:nth-child(2) { transform: translateY(0px) !important; }
+.portfolio-header-menu-toggle span:nth-child(3) { transform: translateY(7px) !important; }
+.portfolio-header.is-menu-open .portfolio-header-menu-toggle span:nth-child(1) { transform: rotate(45deg) !important; }
+.portfolio-header.is-menu-open .portfolio-header-menu-toggle span:nth-child(2) { opacity: 0 !important; }
+.portfolio-header.is-menu-open .portfolio-header-menu-toggle span:nth-child(3) { transform: rotate(-45deg) !important; }
+.portfolio-header-mobile-panel { display: flex !important; position: absolute !important; right: 0px !important; top: 64px !important; width: min(260px, -56px + 100vw) !important; box-sizing: border-box !important; flex-direction: column !important; gap: 2px !important; padding: 10px !important; border-radius: 16px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; background: linear-gradient(135deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.28)) !important; box-shadow: rgba(255, 255, 255, 0.76) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(24px) saturate(1.45) !important; backdrop-filter: blur(24px) saturate(1.45) !important; opacity: 0 !important; transform: translateY(-8px) scale(0.98) !important; transform-origin: right top !important; pointer-events: none !important; transition: none !important; }
+.portfolio-header.is-menu-open .portfolio-header-mobile-panel { opacity: 1 !important; transform: translateY(0px) scale(1) !important; pointer-events: auto !important; transition: opacity 0.18s, transform 0.18s !important; }
+.portfolio-header-mobile-link { display: flex !important; align-items: center !important; justify-content: space-between !important; min-height: 44px !important; padding: 0px 14px !important; border-radius: 10px !important; color: rgba(24, 24, 27, 0.78) !important; font-family: Geist, Arial, sans-serif !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1 !important; text-decoration: none !important; letter-spacing: 0px !important; }
+.portfolio-header-mobile-link:hover { background: rgba(255, 255, 255, 0.34) !important; color: rgba(24, 24, 27, 0.42) !important; }
+.portfolio-header-mobile-link.cc-resume { color: rgb(107, 204, 255) !important; }
+.portfolio-header-mobile-arrow { width: 16px !important; height: 16px !important; margin-left: 1px !important; flex: 0 0 auto !important; }
+}
+@media screen and (max-width: 767px) {
+.portfolio-header-menu-toggle, .portfolio-header-logo-link { position: relative !important; z-index: 3 !important; }
+.portfolio-header-mobile-panel { display: block !important; position: fixed !important; z-index: 1 !important; left: 0px !important; right: 0px !important; top: 0px !important; width: 100vw !important; height: 100dvh !important; box-sizing: border-box !important; padding: 104px 28px 42px !important; border-radius: 0px !important; border: 0px !important; background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.3)) !important; box-shadow: none !important; -webkit-backdrop-filter: blur(24px) saturate(1.45) !important; backdrop-filter: blur(24px) saturate(1.45) !important; overflow: auto !important; color: rgba(24, 24, 27, 0.84) !important; opacity: 0 !important; transform: translateY(-10px) !important; transform-origin: center top !important; pointer-events: none !important; transition: none !important; }
+.portfolio-header.is-menu-open .portfolio-header-mobile-panel { opacity: 1 !important; transform: translateY(0px) !important; pointer-events: auto !important; transition: opacity 0.18s, transform 0.18s !important; }
+.portfolio-mobile-menu-inner { width: 100% !important; max-width: 360px !important; margin: 0px !important; }
+.portfolio-mobile-menu-primary { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; margin: 0px 0px 20px !important; }
+.portfolio-mobile-main-link, .portfolio-mobile-other-link { min-height: 0px !important; padding: 0px !important; border-radius: 0px !important; background: transparent !important; color: rgba(24, 24, 27, 0.86) !important; font-family: Geist, Arial, sans-serif !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1.12 !important; letter-spacing: 0px !important; text-decoration: none !important; }
+.portfolio-mobile-main-link:hover, .portfolio-mobile-other-link:hover { background: transparent !important; color: rgba(24, 24, 27, 0.48) !important; }
+.portfolio-mobile-menu-section { margin: 0px 0px 20px !important; }
+.portfolio-mobile-menu-section.cc-other { margin-bottom: 0px !important; }
+.portfolio-mobile-menu-section-title { margin: 0px 0px 20px !important; color: rgba(24, 24, 27, 0.45) !important; font-family: Geist, Arial, sans-serif !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1.1 !important; letter-spacing: 0px !important; }
+.portfolio-mobile-project-link { display: grid !important; grid-template-columns: 58px minmax(0px, 1fr) !important; align-items: center !important; column-gap: 18px !important; min-height: 64px !important; margin: 0px !important; padding: 6px 10px !important; border-radius: 10px !important; color: rgba(24, 24, 27, 0.86) !important; font-family: Geist, Arial, sans-serif !important; text-decoration: none !important; transition: background-color 0.18s, color 0.18s !important; }
+.portfolio-mobile-project-link:hover { background: rgba(24, 24, 27, 0.07) !important; color: rgba(24, 24, 27, 0.86) !important; }
+.portfolio-mobile-project-icon-wrap { width: 52px !important; height: 52px !important; border-radius: 12px !important; background: rgba(255, 255, 255, 0.78) !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; box-shadow: rgba(3, 28, 37, 0.06) 0px 1px 1px, rgba(255, 255, 255, 0.24) 0px 0px 0px 1px inset !important; -webkit-backdrop-filter: blur(10px) !important; backdrop-filter: blur(10px) !important; }
+.portfolio-mobile-project-icon { width: 52px !important; height: 52px !important; border-radius: 12px !important; display: block !important; object-fit: cover !important; }
+.portfolio-mobile-project-title { display: block !important; min-width: 0px !important; font-size: 20px !important; font-weight: 500 !important; line-height: 1.08 !important; letter-spacing: 0px !important; }
+.portfolio-mobile-other-link { display: flex !important; align-items: center !important; justify-content: flex-start !important; gap: 8px !important; margin: 0px 0px 22px !important; }
+.portfolio-mobile-other-link.cc-resume { color: rgba(24, 24, 27, 0.86) !important; }
+.portfolio-mobile-other-link.cc-resume:hover { color: rgba(24, 24, 27, 0.48) !important; }
+.portfolio-mobile-other-link .portfolio-header-mobile-arrow { width: 24px !important; height: 24px !important; margin-left: 1px !important; flex: 0 0 auto !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header { top: 24px !important; left: max(32px, -603px + 50vw) !important; right: auto !important; width: min(1154px, -64px + 100vw) !important; justify-content: flex-start !important; align-items: center !important; pointer-events: none !important; padding: 0px !important; box-sizing: border-box !important; }
+.portfolio-header-layout { width: 100% !important; max-width: none !important; display: grid !important; grid-template-columns: 1fr auto 1fr !important; align-items: center !important; justify-content: normal !important; gap: 24px !important; pointer-events: auto !important; }
+.portfolio-header-logo-link { justify-self: start !important; display: inline-flex !important; align-items: center !important; justify-content: flex-start !important; width: auto !important; height: auto !important; min-width: 0px !important; padding: 0px !important; border: 0px !important; border-radius: 0px !important; background: transparent !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; overflow: visible !important; text-decoration: none !important; }
+.portfolio-header-logo-text { display: block !important; color: rgb(107, 204, 255) !important; font-family: "Snell Roundhand", "Snell Roundhand Script", cursive !important; font-size: 32px !important; font-weight: 900 !important; line-height: 0.88 !important; letter-spacing: 0px !important; -webkit-text-stroke: 0.28px rgb(107, 204, 255) !important; text-shadow: none !important; transform: none !important; }
+.portfolio-header-logo-link:hover, .portfolio-header-logo-link:active, .portfolio-header-logo-link:focus { transform: none !important; background: transparent !important; }
+.portfolio-header-liquid { justify-self: center !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 36px !important; padding: 0px !important; border: 0px !important; border-radius: 0px !important; background: transparent !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.portfolio-header-liquid .portfolio-header-nav-link { height: auto !important; min-height: 0px !important; padding: 0px !important; border: 0px !important; background: transparent !important; box-shadow: none !important; color: rgba(24, 24, 27, 0.6) !important; font-size: 15px !important; font-weight: 500 !important; line-height: 1 !important; text-decoration: none !important; opacity: 1 !important; transform: none !important; transition: color 0.18s !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:hover { color: rgba(24, 24, 27, 0.34) !important; transform: none !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:active, .portfolio-header-liquid .portfolio-header-nav-link:focus { color: rgba(24, 24, 27, 0.6) !important; transform: none !important; }
+.portfolio-header-resume-link { justify-self: end !important; display: inline-flex !important; align-items: center !important; justify-content: flex-end !important; gap: 2px !important; width: auto !important; height: auto !important; padding: 11px 14px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; border-radius: 10px !important; background: rgba(107, 204, 255, 0.72) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; color: rgb(255, 255, 255) !important; font-size: 15px !important; font-weight: 600 !important; line-height: 1 !important; text-decoration: none !important; transform: none !important; transition: color 0.18s, background-color 0.18s, border-color 0.18s !important; }
+.portfolio-header-resume-link:hover { color: rgb(255, 255, 255) !important; background: rgba(107, 204, 255, 0.78) !important; border-color: rgba(255, 255, 255, 0.68) !important; transform: none !important; }
+.portfolio-header-resume-link:active, .portfolio-header-resume-link:focus { color: rgb(107, 204, 255) !important; transform: none !important; }
+.portfolio-header-resume-arrow { width: 16px !important; height: 16px !important; flex: 0 0 auto !important; }
+.portfolio-header-resume-arrow path { stroke-width: 2.6 !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header { top: 26px !important; left: 52px !important; right: 52px !important; }
+.portfolio-header-layout { gap: 18px !important; }
+.portfolio-header-logo-text { font-size: 30px !important; }
+.portfolio-header-liquid { gap: 28px !important; }
+.portfolio-header-project-menu { width: 292px !important; }
+.portfolio-header-project-item { font-size: 15px !important; }
+.portfolio-header-liquid .portfolio-header-nav-link, .portfolio-header-resume-link { font-size: 15px !important; }
+.portfolio-header-resume-link { border-radius: 5px !important; }
+.portfolio-header-resume-arrow { width: 15px !important; height: 15px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-project-trigger { cursor: default !important; }
+.portfolio-header-project-wrap::after { content: "" !important; position: absolute !important; left: -24px !important; right: -24px !important; top: 100% !important; height: 22px !important; display: block !important; background: transparent !important; }
+.portfolio-header-project-wrap:hover .portfolio-header-chevron, .portfolio-header-project-wrap:focus-within .portfolio-header-chevron { transform: rotate(180deg) !important; opacity: 1 !important; }
+.portfolio-header-project-wrap:hover .portfolio-header-project-menu, .portfolio-header-project-wrap:focus-within .portfolio-header-project-menu { opacity: 1 !important; pointer-events: auto !important; transform: translate(-50%, 0px) !important; }
+.portfolio-header-project-menu { top: calc(100% + 18px) !important; width: 316px !important; padding: 14px !important; border: 0px !important; border-radius: 28px !important; background: rgba(255, 255, 255, 0.94) !important; box-shadow: rgba(3, 28, 37, 0.12) 0px 18px 46px !important; -webkit-backdrop-filter: blur(20px) saturate(1.08) !important; backdrop-filter: blur(20px) saturate(1.08) !important; }
+.portfolio-header-project-item { min-height: 52px !important; padding: 6px 8px !important; gap: 12px !important; border-radius: 12px !important; color: rgb(17, 17, 17) !important; font-size: 15px !important; line-height: 1 !important; }
+.portfolio-header-project-item:hover { background: rgba(24, 24, 27, 0.07) !important; color: rgb(17, 17, 17) !important; }
+.portfolio-header-project-icon-wrap { width: 40px !important; height: 40px !important; flex-basis: 40px !important; border: 1px solid rgba(24, 24, 27, 0.1) !important; border-radius: 10px !important; }
+.portfolio-header-project-copy { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 5px !important; min-width: 0px !important; }
+.portfolio-header-project-title { display: block !important; color: rgb(17, 17, 17) !important; font-size: 15px !important; font-weight: 500 !important; line-height: 1.05 !important; white-space: normal !important; }
+.portfolio-header-project-subtitle { display: block !important; color: rgba(24, 24, 27, 0.52) !important; font-size: 13px !important; font-weight: 400 !important; line-height: 1.1 !important; white-space: normal !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header-project-menu { width: 300px !important; padding: 13px !important; }
+.portfolio-header-project-item { min-height: 50px !important; gap: 12px !important; }
+.portfolio-header-project-icon-wrap { width: 38px !important; height: 38px !important; flex-basis: 38px !important; }
+.portfolio-header-project-title { font-size: 15px !important; }
+.portfolio-header-project-subtitle { font-size: 13px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header { z-index: 2147483647 !important; position: fixed !important; top: 28px !important; left: 0px !important; right: 0px !important; width: 100% !important; display: flex !important; justify-content: center !important; align-items: center !important; pointer-events: none !important; padding: 0px !important; box-sizing: border-box !important; font-family: Geist, Arial, sans-serif !important; line-height: 1 !important; }
+.portfolio-header-layout { width: auto !important; max-width: none !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 15px !important; pointer-events: auto !important; }
+.portfolio-header-logo-link { justify-self: auto !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; flex: 0 0 auto !important; width: 50px !important; height: 50px !important; min-width: 50px !important; padding: 0px 9px !important; text-decoration: none !important; border-radius: 14px !important; overflow: hidden !important; background: rgb(255, 255, 255) !important; border: 1px solid rgba(255, 255, 255, 0.68) !important; box-sizing: border-box !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.portfolio-header-logo-link:hover, .portfolio-header-logo-link:active, .portfolio-header-logo-link:focus { transform: none !important; background: rgb(255, 255, 255) !important; }
+.portfolio-header-logo-text { display: block !important; color: rgb(107, 204, 255) !important; font-family: "Snell Roundhand", "Snell Roundhand Script", cursive !important; font-size: 35px !important; font-weight: 900 !important; line-height: 0.86 !important; letter-spacing: 0px !important; -webkit-text-stroke: 0.45px rgb(107, 204, 255) !important; text-shadow: currentcolor 0px 0px 0.01px !important; transform: translateY(1px) !important; }
+.portfolio-header-liquid { justify-self: auto !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 15px !important; padding: 14px 28px !important; border-radius: 14px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; }
+.portfolio-header-liquid .portfolio-header-nav-link { display: inline-flex !important; align-items: center !important; justify-content: center !important; height: auto !important; min-height: 0px !important; padding: 0px !important; border: 0px !important; background: transparent !important; box-shadow: none !important; color: rgba(24, 24, 27, 0.6) !important; font-family: Geist, Arial, sans-serif !important; font-size: 17px !important; font-weight: 500 !important; line-height: 1 !important; letter-spacing: 0px !important; white-space: nowrap !important; text-decoration: none !important; opacity: 1 !important; transform: none !important; transition: color 0.18s !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:hover { color: rgba(24, 24, 27, 0.34) !important; transform: none !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:active, .portfolio-header-liquid .portfolio-header-nav-link:focus { color: rgba(24, 24, 27, 0.6) !important; transform: none !important; }
+.portfolio-header-resume-link { justify-self: auto !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 1px !important; flex: 0 0 auto !important; width: auto !important; height: auto !important; padding: 14px 28px !important; border-radius: 14px !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; background: rgba(107, 204, 255, 0.72) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; color: rgb(255, 255, 255) !important; font-family: Geist, Arial, sans-serif !important; font-size: 17px !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: 0px !important; text-decoration: none !important; white-space: nowrap !important; transform: none !important; transition: background-color 0.18s, border-color 0.18s !important; }
+.portfolio-header-resume-link:hover { color: rgb(255, 255, 255) !important; background: rgba(107, 204, 255, 0.78) !important; border-color: rgba(255, 255, 255, 0.68) !important; transform: none !important; }
+.portfolio-header-resume-link:active, .portfolio-header-resume-link:focus { color: rgb(255, 255, 255) !important; transform: none !important; }
+.portfolio-header-resume-arrow { display: block !important; width: 20px !important; height: 20px !important; flex: 0 0 auto !important; }
+.portfolio-header-resume-arrow path { stroke-width: 2.6 !important; }
+.portfolio-header-menu-toggle, .portfolio-header-mobile-panel { display: none !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header { top: 24px !important; }
+.portfolio-header-layout { gap: 15px !important; }
+.portfolio-header-logo-link { width: 50px !important; height: 50px !important; min-width: 50px !important; border-radius: 12px !important; }
+.portfolio-header-logo-text { font-size: 35px !important; }
+.portfolio-header-liquid { gap: 15px !important; padding: 14px 24px !important; border-radius: 12px !important; }
+.portfolio-header-liquid .portfolio-header-nav-link { font-size: 17px !important; }
+.portfolio-header-resume-link { padding: 14px 24px !important; border-radius: 12px !important; font-size: 17px !important; }
+.portfolio-header-resume-arrow { width: 18px !important; height: 18px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-project-menu { border: 1px solid rgba(255, 255, 255, 0.58) !important; background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-project-menu { -webkit-backdrop-filter: blur(34px) saturate(1.55) !important; backdrop-filter: blur(34px) saturate(1.55) !important; background: linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.28)) !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-liquid { gap: 24px !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header-liquid { gap: 20px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-project-menu { background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.52)) !important; box-shadow: rgba(3, 28, 37, 0.08) 0px 14px 32px, rgba(255, 255, 255, 0.82) 0px 1px 0px inset, rgba(255, 255, 255, 0.36) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(34px) saturate(1.45) !important; backdrop-filter: blur(34px) saturate(1.45) !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-logo-link { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; }
+.portfolio-header-logo-link:hover, .portfolio-header-logo-link:active, .portfolio-header-logo-link:focus { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-resume-link { background: rgb(255, 255, 255) !important; color: rgb(107, 204, 255) !important; border: 1px solid rgba(255, 255, 255, 0.68) !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.portfolio-header-resume-link:hover { background: rgb(255, 255, 255) !important; color: rgba(107, 204, 255, 0.62) !important; border-color: rgba(255, 255, 255, 0.78) !important; }
+.portfolio-header-resume-link:active, .portfolio-header-resume-link:focus { background: rgb(255, 255, 255) !important; color: rgb(107, 204, 255) !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-resume-link { height: 50px !important; box-sizing: border-box !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+.portfolio-header-logo-link { height: 50px !important; box-sizing: border-box !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header-resume-link, .portfolio-header-logo-link { height: 50px !important; }
+}
+@media screen and (min-width: 901px) {
+.portfolio-header { top: 20px !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header { top: 18px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-resume-link { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; border: 1px solid rgba(255, 255, 255, 0.58) !important; box-shadow: rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; color: rgb(107, 204, 255) !important; }
+.portfolio-header-resume-link:hover { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; border-color: rgba(255, 255, 255, 0.68) !important; color: rgba(107, 204, 255, 0.62) !important; }
+.portfolio-header-resume-link:active, .portfolio-header-resume-link:focus { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; color: rgb(107, 204, 255) !important; }
+body.is-content-scrolled .portfolio-header-resume-link { background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.58)) !important; border-color: rgba(24, 24, 27, 0.1) !important; box-shadow: rgba(24, 24, 27, 0.06) 0px 10px 28px, rgba(255, 255, 255, 0.78) 0px 1px 0px inset, rgba(255, 255, 255, 0.36) 0px -1px 0px inset !important; color: rgb(107, 204, 255) !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-resume-link { height: 50px !important; min-height: 50px !important; box-sizing: border-box !important; padding-top: 0px !important; padding-bottom: 0px !important; align-items: center !important; line-height: 1 !important; }
+.portfolio-header-resume-link span { display: inline-flex !important; align-items: center !important; height: 17px !important; line-height: 17px !important; }
+.portfolio-header-resume-arrow { display: block !important; width: 20px !important; height: 20px !important; flex: 0 0 20px !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header-resume-link { height: 50px !important; min-height: 50px !important; }
+.portfolio-header-resume-link span { height: 17px !important; line-height: 17px !important; }
+.portfolio-header-resume-arrow { width: 18px !important; height: 18px !important; flex-basis: 18px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-resume-link { border: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; }
+.portfolio-header-resume-link:hover { border: 0px !important; box-shadow: rgba(255, 255, 255, 0.68) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; }
+body.is-content-scrolled .portfolio-header-resume-link { border: 0px !important; box-shadow: rgba(24, 24, 27, 0.06) 0px 10px 28px, rgba(24, 24, 27, 0.1) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.78) 0px 1px 0px inset, rgba(255, 255, 255, 0.36) 0px -1px 0px inset !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-liquid, .portfolio-header-resume-link { height: 50px !important; min-height: 50px !important; box-sizing: border-box !important; border: 0px !important; align-items: center !important; }
+.portfolio-header-liquid { padding-top: 0px !important; padding-bottom: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; }
+.portfolio-header-resume-link { padding-top: 0px !important; padding-bottom: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; }
+.portfolio-header-liquid:hover, .portfolio-header-resume-link:hover { border: 0px !important; }
+.portfolio-header-resume-link span { height: auto !important; line-height: 1 !important; }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+.portfolio-header-liquid, .portfolio-header-resume-link { height: 50px !important; min-height: 50px !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-resume-link { background: rgb(255, 255, 255) !important; color: rgb(107, 204, 255) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.portfolio-header-resume-link:hover { background: rgb(255, 255, 255) !important; color: rgba(107, 204, 255, 0.62) !important; }
+.portfolio-header-resume-link:active, .portfolio-header-resume-link:focus { background: rgb(255, 255, 255) !important; color: rgb(107, 204, 255) !important; }
+}
+@media screen and (min-width: 768px) {
+body.is-content-scrolled .header-blur-layer { opacity: 0 !important; }
+body.is-content-scrolled .portfolio-header-liquid { background: rgba(107, 204, 255, 0.56) !important; border: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(24px) saturate(1.5) !important; backdrop-filter: blur(24px) saturate(1.5) !important; }
+body.is-content-scrolled .portfolio-header-liquid .portfolio-header-nav-link { color: rgb(255, 255, 255) !important; }
+body.is-content-scrolled .portfolio-header-liquid .portfolio-header-nav-link:hover { color: rgba(255, 255, 255, 0.72) !important; }
+body.is-content-scrolled .portfolio-header-resume-link { background: rgb(255, 255, 255) !important; color: rgb(107, 204, 255) !important; border: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+body.is-content-scrolled .portfolio-header-resume-link:hover { background: rgb(255, 255, 255) !important; color: rgba(107, 204, 255, 0.62) !important; box-shadow: rgba(255, 255, 255, 0.68) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; }
+}
+@media screen and (min-width: 768px) {
+.portfolio-header-liquid { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; border: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; }
+.portfolio-header-liquid .portfolio-header-nav-link { color: rgba(24, 24, 27, 0.6) !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:hover { color: rgba(24, 24, 27, 0.34) !important; }
+.portfolio-header-liquid .portfolio-header-nav-link:active, .portfolio-header-liquid .portfolio-header-nav-link:focus { color: rgba(24, 24, 27, 0.6) !important; }
+body.is-content-scrolled .portfolio-header-liquid { background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.24)) !important; border: 0px !important; box-shadow: rgba(255, 255, 255, 0.58) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.72) 0px 1px 0px inset, rgba(255, 255, 255, 0.22) 0px -1px 0px inset !important; -webkit-backdrop-filter: blur(22px) saturate(1.45) !important; backdrop-filter: blur(22px) saturate(1.45) !important; }
+body.is-content-scrolled .portfolio-header-liquid .portfolio-header-nav-link { color: rgba(24, 24, 27, 0.6) !important; }
+body.is-content-scrolled .portfolio-header-liquid .portfolio-header-nav-link:hover { color: rgba(24, 24, 27, 0.34) !important; }
+}
+body.is-project-menu-open{overflow:hidden}
+.portfolio-header button{font:inherit;cursor:pointer}
+.case-breakpoint [data-source$="evjgkDuQG"]{padding-top:88px}
+.header-blur-layer,body.is-content-scrolled .header-blur-layer{height:128px;opacity:1!important;background:linear-gradient(rgba(255,255,255,.24),rgba(255,255,255,0));backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);mask-image:linear-gradient(#000 30%,transparent 100%);-webkit-mask-image:linear-gradient(#000 30%,transparent 100%)}
+.header-blur-layer:before,.header-blur-layer:after{content:"";position:absolute;inset:0;pointer-events:none}
+.header-blur-layer:before{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);mask-image:linear-gradient(#000 35%,transparent 85%);-webkit-mask-image:linear-gradient(#000 35%,transparent 85%)}
+.header-blur-layer:after{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);mask-image:linear-gradient(#000 20%,transparent 65%);-webkit-mask-image:linear-gradient(#000 20%,transparent 65%)}
+@media(max-width:809.98px){.header-blur-layer,body.is-content-scrolled .header-blur-layer{height:112px}}

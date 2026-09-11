@@ -1,0 +1,52 @@
+/* Match the case-study progressive blur without changing Home. */
+body.portfolio-about-page .header-blur-layer {
+  height: 128px;
+  opacity: 1 !important;
+  background: linear-gradient(rgba(255, 255, 255, .24), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  mask-image: linear-gradient(#000 30%, transparent 100%);
+  -webkit-mask-image: linear-gradient(#000 30%, transparent 100%);
+}
+
+body.portfolio-about-page .header-blur-layer::before,
+body.portfolio-about-page .header-blur-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+body.portfolio-about-page .header-blur-layer::before {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(#000 35%, transparent 85%);
+  -webkit-mask-image: linear-gradient(#000 35%, transparent 85%);
+}
+
+body.portfolio-about-page .header-blur-layer::after {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  mask-image: linear-gradient(#000 20%, transparent 65%);
+  -webkit-mask-image: linear-gradient(#000 20%, transparent 65%);
+}
+
+@media (max-width: 809.98px) {
+  body.portfolio-about-page .header-blur-layer { height: 112px; }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:hover,
+  .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:focus-visible,
+  body.is-content-scrolled .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:hover,
+  body.is-content-scrolled .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:focus-visible {
+    color: rgba(24, 24, 27, .9) !important;
+  }
+
+  .portfolio-header .portfolio-header-resume-link:hover,
+  .portfolio-header .portfolio-header-resume-link:focus-visible,
+  body.is-content-scrolled .portfolio-header .portfolio-header-resume-link:hover,
+  body.is-content-scrolled .portfolio-header .portfolio-header-resume-link:focus-visible {
+    color: #359fce !important;
+  }
+}

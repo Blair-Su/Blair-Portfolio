@@ -1,0 +1,56 @@
+/* Keep the desktop illustration together as the card grows beyond its 960px master. */
+.project-lighthouse-desktop .f-oUdWoM2ou {
+  left: calc(100% - 552.5px);
+}
+.project-lighthouse-desktop .f-pze1e7IwD {
+  left: calc(100% - 553.5px);
+}
+.project-lighthouse-desktop .f-OLjevnm1o,
+.project-lighthouse-desktop .f-hBLeUw2Ys {
+  left: calc(100% - 427.5px);
+}
+.project-lighthouse-desktop .f-mM7MY3MEJ {
+  left: calc(100% - 460px);
+}
+.project-lighthouse-desktop:is(:hover, .is-active) .f-mM7MY3MEJ,
+.framer-project-card:focus-visible .project-lighthouse-desktop .f-mM7MY3MEJ {
+  left: calc(-291px - var(--project-card-width, 960px) * .0239583333);
+  width: calc(var(--project-card-width, 960px) * 1.0447916667);
+}
+
+/* Keep the scene, foreground car, and rotated fade in the same right-aligned space. */
+.project-hhi-desktop .project-mask-space {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 960px;
+  height: 300px;
+  pointer-events: none;
+}
+
+/* The mobile laptop is one fixed-proportion assembly, including its video screen. */
+.project-southern-phone .f-lDC1RvMN1 {
+  left: auto;
+  right: 13.22px;
+  bottom: 16.4px;
+  width: 243.78px;
+  height: 147.86px;
+}
+.project-southern-phone .f-jbTXAi2nD {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.project-southern-phone .f-EQBWhI1ZD {
+  left: 22px;
+  bottom: 11px;
+}
+.project-southern-phone .f-dJEPIPEOE {
+  left: 20px;
+  bottom: 16.5px;
+}
+.project-southern-phone .f-OHtJKsw6I {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
