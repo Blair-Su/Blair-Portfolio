@@ -29,6 +29,45 @@
   width: calc(var(--project-card-width, 960px) * 1.0447916667);
 }
 
+/* Keep a solid phone underneath the single fading interface layer. */
+.framer-project-card .project-lighthouse-desktop .project-node:is(.f-oUdWoM2ou, .f-OLjevnm1o, .f-ytPwLFaGX, .f-A2O1z49ot, .f-Rev8L6aUI, .f-rA6hJrqVU) {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+.framer-project-card .project-lighthouse-desktop .project-node.f-ytPwLFaGX {
+  background-image: url("./selected-projects/4asSqDFBe4gQhXKqSerGZrbQsQ.png");
+}
+.framer-project-card .project-lighthouse-desktop .project-node.f-A2O1z49ot {
+  background-image: url("./selected-projects/Ml4L5ZApGUYrPQaxrwAFTZ8W8jw.png");
+}
+.framer-project-card .project-lighthouse-desktop .project-node:is(.f-Rev8L6aUI, .f-rA6hJrqVU) {
+  background-image: url("./selected-projects/za89hDhO3s3x8bS5lV34G3I.png");
+}
+.framer-project-card .project-lighthouse-desktop .project-node:is(.f-pze1e7IwD, .f-hBLeUw2Ys) {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+.framer-project-card .project-lighthouse-desktop .project-node.f-pze1e7IwD {
+  left: calc(100% - 552.5px);
+}
+.framer-project-card .project-lighthouse-desktop .project-node:is(.f-ZQorPBWG9, .f-FvP7Ld_YE) {
+  opacity: 0;
+  visibility: visible;
+  transition: opacity .35s ease;
+}
+.framer-project-card .project-lighthouse-desktop:is(:hover, .is-active) .project-node:is(.f-ZQorPBWG9, .f-FvP7Ld_YE),
+.framer-project-card:focus-visible .project-lighthouse-desktop .project-node:is(.f-ZQorPBWG9, .f-FvP7Ld_YE) {
+  opacity: 1;
+}
+.framer-project-card .project-lighthouse-desktop .project-node:is(.f-vA1_Z_EFP, .f-Rv3j7xTy3) {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+  z-index: 1;
+}
+
 /* Keep the scene, foreground car, and rotated fade in the same right-aligned space. */
 .project-hhi-desktop .project-mask-space {
   position: absolute;
