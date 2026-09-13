@@ -36,6 +36,8 @@ body{margin:0;background:#fff;color:#111;font-family:Geist,Arial,sans-serif;font
 .case-phone :is([data-source$="YOBnAN094"],[data-source$="A0FRmAsV1"],[data-source$="tzc9sZP5d"],[data-source$="M1dt5hREI"]){row-gap:6px}
 .case-phone :is([data-source$="W1D3uJvt0"],[data-source$="aI2MzYcbd"]){row-gap:24px}
 .case-breakpoint :is([data-source$="r9Mp50xbA"],[data-source$="s73S2ebNg"]) .s18{font-weight:500}
+.case-breakpoint [data-source$="mIOv0Uqpi"],
+.case-breakpoint :is([data-source$="Nm3cu3j6C"],[data-source$="Zdh0kzXEB"]) .s70{font-weight:400}
 .case-phone :is([data-source$="j18O2FBuj"],[data-source$="NWUI3TV8K"],[data-source$="AqpGtlXTn"],[data-source$="eHlm_9JRW"]),
 .case-phone :is([data-source$="j18O2FBuj"],[data-source$="NWUI3TV8K"],[data-source$="AqpGtlXTn"],[data-source$="eHlm_9JRW"]) :is(p,span){font-size:24px!important;font-family:Geist,Arial,sans-serif!important}
 .case-node a.case-prototype-link{text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
