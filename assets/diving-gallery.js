@@ -110,7 +110,14 @@ async function initializeDivingGallery() {
   gallery.addEventListener('pointerdown', () => { focused = false; hold(); }, { passive: true });
   window.addEventListener('pointerup', release, { passive: true });
   window.addEventListener('pointercancel', release, { passive: true });
-  gallery.addEventListener('wheel', () => { hold(); release(); }, { passive: true });
+  gallery.addEventListener('wheel', event => {
+    // Vertical page scrolling, including trackpad momentum, should not pause the photos.
+    const horizontal = Math.abs(event.deltaX) > Math.abs(event.deltaY) ||
+      (event.shiftKey && event.deltaY !== 0);
+    if (!horizontal) return;
+    hold();
+    release();
+  }, { passive: true });
   document.addEventListener('visibilitychange', sync);
   reducedMotion.addEventListener('change', event => {
     if (event.matches) paused = true;

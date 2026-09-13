@@ -1,3 +1,14 @@
+.framer-project-card :is(.project-lighthouse-desktop, .project-lighthouse-tablet, .project-lighthouse-phone) :is(.f-EO43GQvYU, .f-KfZZuIyZp) {
+  transition: background-color .18s ease, color .18s ease;
+}
+.framer-project-card:hover :is(.project-lighthouse-desktop, .project-lighthouse-tablet, .project-lighthouse-phone) .f-EO43GQvYU {
+  background: #fff;
+  --node-border: 1px solid #ffc928;
+}
+.framer-project-card:hover :is(.project-lighthouse-desktop, .project-lighthouse-tablet, .project-lighthouse-phone) .f-KfZZuIyZp {
+  color: #ffc928;
+}
+
 /* Keep the desktop illustration together as the card grows beyond its 960px master. */
 .project-lighthouse-desktop .f-oUdWoM2ou {
   left: calc(100% - 552.5px);
@@ -56,4 +67,32 @@
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Match Southern Crafted's mobile copy and arrow alignment across all four cards. */
+.framer-project-card .project-phone .project-stage {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  padding: 27px;
+}
+.framer-project-card .project-phone [data-layer="Card Copy"] {
+  flex: 1 0 0px;
+  width: 0;
+  min-width: 0;
+  gap: 8px;
+}
+.framer-project-card .project-phone [data-layer="Subtitle"] {
+  width: max-content;
+  max-width: calc(100% + 64px);
+  white-space: normal;
+}
+.project-nalu-phone [data-layer="Subtitle"] {
+  font-size: 14px;
+}
+.framer-project-card .project-phone .project-stage > :has(> .project-arrow) {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
 }

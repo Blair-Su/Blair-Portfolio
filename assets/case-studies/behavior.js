@@ -2,6 +2,18 @@
   const activeRoot = () => [...document.querySelectorAll('.case-breakpoint')].find(el => el.getClientRects().length);
   const target = id => [...(activeRoot()?.querySelectorAll('[data-anchor]') || [])].find(el => el.dataset.anchor === id);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  // Hidden breakpoint copies must not share SVG paint servers with the visible card.
+  document.querySelectorAll('.case-more-link[href="./project-1-lighthouse/"] svg').forEach((svg, index) => {
+    svg.querySelectorAll('linearGradient[id]').forEach(gradient => {
+      const previousId = gradient.id;
+      gradient.id = `lighthouse-${index}-${previousId}`;
+      svg.querySelectorAll('[fill]').forEach(shape => {
+        if (shape.getAttribute('fill') === `url(#${previousId})`) {
+          shape.setAttribute('fill', `url(#${gradient.id})`);
+        }
+      });
+    });
+  });
   document.querySelectorAll('.case-phone [data-source$="l8HodM7QO"]').forEach(frame => {
     const artwork = document.createElement('div');
     artwork.className = 'case-mobile-artwork';

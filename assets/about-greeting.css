@@ -1,0 +1,72 @@
+.intro-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.intro-heading-row .intro-heading {
+  min-width: 0;
+  margin: 0;
+}
+.intro-wave-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.intro-wave-button:focus-visible { outline: 2px solid #62c9f8; outline-offset: 3px; }
+.intro-wave-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  transform-origin: 70% 80%;
+}
+.intro-wave-icon,
+.intro-clap-hand {
+  color: #000;
+  -webkit-text-fill-color: #000;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  opacity: 1;
+}
+.intro-clap {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.intro-clap-hand {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 30px;
+  height: 30px;
+}
+.intro-wave-button.is-clapping .intro-wave-icon { visibility: hidden; }
+.intro-wave-button.is-clapping .intro-clap { visibility: visible; }
+.intro-wave-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 991px) {
+  .intro-heading-row { margin-bottom: 24px; }
+}
+@media (max-width: 767px) {
+  .intro-heading-row { gap: 8px; }
+}
