@@ -33,7 +33,8 @@ body{margin:0;background:#fff;color:#111;font-family:Geist,Arial,sans-serif;font
 .case-desktop [data-source="qLTyol2lP"]{left:auto;right:61.5px;max-width:calc(36.35235732009926% - 147px);height:auto;aspect-ratio:194.75 / 252.25}
 .case-phone .case-body-description,
 .case-phone .case-body-description :is(p,span,a,li){font-size:18px!important}
-.case-phone :is([data-source$="YOBnAN094"],[data-source$="A0FRmAsV1"],[data-source$="tzc9sZP5d"],[data-source$="M1dt5hREI"]){row-gap:6px}
+.case-phone :is([data-source$="YOBnAN094"],[data-source$="A0FRmAsV1"],[data-source$="tzc9sZP5d"]){row-gap:6px}
+.case-phone [data-source$="M1dt5hREI"]{row-gap:24px}
 .case-phone :is([data-source$="W1D3uJvt0"],[data-source$="aI2MzYcbd"]){row-gap:24px}
 .case-breakpoint :is([data-source$="r9Mp50xbA"],[data-source$="s73S2ebNg"]) .s18{font-weight:500}
 .case-breakpoint [data-source$="mIOv0Uqpi"],

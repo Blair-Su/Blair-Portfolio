@@ -2,14 +2,14 @@
   .portfolio-header { top: 15px !important; left: 24px !important; right: 24px !important; }
   .portfolio-header-logo-link,
   .portfolio-header-menu-toggle {
-    width: 46px !important;
-    height: 46px !important;
-    min-width: 46px !important;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
     border-radius: 10px !important;
   }
   .portfolio-header-logo-link { padding: 0 6px !important; }
-  .portfolio-header-logo-text { font-size: 33px !important; }
-  .portfolio-header-menu-toggle span { width: 22px !important; }
+  .portfolio-header-logo-text { font-size: 36px !important; }
+  .portfolio-header-menu-toggle span { width: 24px !important; }
   .portfolio-header-mobile-panel { padding: 92px 24px 40px !important; }
   .portfolio-mobile-menu-inner { max-width: none !important; }
   .portfolio-mobile-menu-primary { gap: 20px !important; margin: 0 0 24px !important; }

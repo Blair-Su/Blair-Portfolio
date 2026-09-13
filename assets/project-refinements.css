@@ -39,6 +39,42 @@
   pointer-events: none;
 }
 
+/* Keep the complete desktop laptop shifted equally in every interaction state. */
+.project-southern-desktop .f-lDC1RvMN1 {
+  transform: translateX(96px);
+}
+
+/* The phones exchange high and low positions without shifting horizontally. */
+.project-nalu-desktop .f-vEbs4xjTD {
+  right: 154px;
+  top: calc(100% - 237.27px);
+  bottom: auto;
+  transform: none;
+}
+.project-nalu-desktop .f-ukKuCQCkl {
+  right: 275px;
+  top: 24px;
+  bottom: auto;
+  transform: none;
+}
+.project-nalu-desktop:is(:hover, .is-active) .f-vEbs4xjTD,
+.framer-project-card:focus-visible .project-nalu-desktop .f-vEbs4xjTD {
+  top: 24px;
+  bottom: auto;
+  transform: none;
+}
+.project-nalu-desktop:is(:hover, .is-active) .f-ukKuCQCkl,
+.framer-project-card:focus-visible .project-nalu-desktop .f-ukKuCQCkl {
+  top: calc(100% - 237.27px);
+  bottom: auto;
+  transform: none;
+}
+
+.project-hhi-desktop .project-stage,
+.project-nalu-desktop .project-stage {
+  --project-duration: .7s;
+}
+
 /* The mobile laptop is one fixed-proportion assembly, including its video screen. */
 .project-southern-phone .f-lDC1RvMN1 {
   left: auto;
