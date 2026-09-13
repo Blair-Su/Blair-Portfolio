@@ -1,3 +1,59 @@
+@media (max-width: 767px) {
+  .portfolio-header { top: 15px !important; left: 24px !important; right: 24px !important; }
+  .portfolio-header-logo-link,
+  .portfolio-header-menu-toggle {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    border-radius: 10px !important;
+  }
+  .portfolio-header-logo-link { padding: 0 6px !important; }
+  .portfolio-header-logo-text { font-size: 30px !important; }
+  .portfolio-header-mobile-panel { padding: 92px 24px 40px !important; }
+  .portfolio-mobile-menu-inner { max-width: none !important; }
+  .portfolio-mobile-menu-primary { gap: 20px !important; margin: 0 0 24px !important; }
+  .portfolio-mobile-main-link,
+  .portfolio-mobile-other-link,
+  .portfolio-mobile-menu-section-title {
+    font-family: Geist, Arial, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+  }
+  .portfolio-mobile-menu-section { margin-bottom: 24px !important; }
+  .portfolio-mobile-menu-section-title { margin-bottom: 16px !important; }
+  .portfolio-mobile-project-link {
+    grid-template-columns: 50px minmax(0, 1fr) !important;
+    column-gap: 12px !important;
+    min-height: 66px !important;
+    padding: 8px 0 !important;
+  }
+  .portfolio-mobile-project-icon-wrap,
+  .portfolio-mobile-project-icon {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 8px !important;
+  }
+  .portfolio-mobile-project-icon { object-fit: contain !important; }
+  .portfolio-mobile-project-title {
+    font-family: Geist, Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+  }
+  .portfolio-mobile-project-time {
+    display: block;
+    margin-top: 4px;
+    font-family: Geist, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgba(24, 24, 27, .5);
+  }
+  .portfolio-mobile-other-link { margin-bottom: 20px !important; gap: 8px !important; }
+  .portfolio-mobile-other-link .portfolio-header-mobile-arrow { width: 18px !important; height: 18px !important; }
+}
+
 .portfolio-footer-connect a { min-width: 0; }
 @media (min-width: 901px) {
   .portfolio-footer-top { grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); }
@@ -6,10 +62,9 @@
   .portfolio-footer-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-/* Match the case-study progressive blur without changing Home. */
-body.portfolio-about-page .header-blur-layer {
+/* All pages share the same scroll-triggered progressive blur. */
+body .header-blur-layer {
   height: 128px;
-  opacity: 1 !important;
   background: linear-gradient(rgba(255, 255, 255, .24), rgba(255, 255, 255, 0));
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -17,22 +72,22 @@ body.portfolio-about-page .header-blur-layer {
   -webkit-mask-image: linear-gradient(#000 30%, transparent 100%);
 }
 
-body.portfolio-about-page .header-blur-layer::before,
-body.portfolio-about-page .header-blur-layer::after {
+body .header-blur-layer::before,
+body .header-blur-layer::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
 
-body.portfolio-about-page .header-blur-layer::before {
+body .header-blur-layer::before {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   mask-image: linear-gradient(#000 35%, transparent 85%);
   -webkit-mask-image: linear-gradient(#000 35%, transparent 85%);
 }
 
-body.portfolio-about-page .header-blur-layer::after {
+body .header-blur-layer::after {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   mask-image: linear-gradient(#000 20%, transparent 65%);
@@ -40,8 +95,11 @@ body.portfolio-about-page .header-blur-layer::after {
 }
 
 @media (max-width: 809.98px) {
-  body.portfolio-about-page .header-blur-layer { height: 112px; }
+  body .header-blur-layer { height: 112px; }
 }
+
+body:not(.has-header-scroll) .header-blur-layer { opacity: 0 !important; }
+body.has-header-scroll .header-blur-layer { opacity: 1 !important; }
 
 @media screen and (min-width: 768px) {
   .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:hover,

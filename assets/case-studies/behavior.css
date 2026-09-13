@@ -12,6 +12,10 @@ body{margin:0;background:#fff;color:#111;font-family:Geist,Arial,sans-serif;font
 .case-node button,button.case-node{font:inherit;color:inherit;cursor:pointer;text-align:inherit;letter-spacing:0}
 .case-node button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #62c9f8;outline-offset:4px}
 .case-tablet,.case-phone{display:none}
+.case-breakpoint [data-source$="tAloOmuzT"],
+.case-breakpoint [data-source$="evjgkDuQG"],
+.case-breakpoint [data-source$="itdp2rqLu"]{padding-top:0}
+.case-desktop [data-source="X5a2FZDSW"]{height:100vh;height:100svh;aspect-ratio:auto;background-position:center bottom}
 .case-icon{display:inline-block;width:20px;height:20px;flex-shrink:0;background:currentColor;mask-size:contain;mask-position:center;mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat}
 .case-node>.case-icon:only-child{width:100%;height:100%}
 .case-research-meal-flow{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
