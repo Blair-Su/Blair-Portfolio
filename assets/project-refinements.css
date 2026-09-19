@@ -78,9 +78,16 @@
   pointer-events: none;
 }
 
-/* Keep the complete desktop laptop shifted equally in every interaction state. */
+/* Anchor the laptop to the right like the other desktop illustrations. */
 .project-southern-desktop .f-lDC1RvMN1 {
-  transform: translateX(96px);
+  left: auto;
+  right: 170px;
+  width: 407.13px;
+  transform: none;
+}
+.project-southern-desktop .f-jbTXAi2nD {
+  left: 0;
+  transform: translateY(-50%);
 }
 
 /* The phones exchange high and low positions without shifting horizontally. */
