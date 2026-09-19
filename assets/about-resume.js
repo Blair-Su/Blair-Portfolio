@@ -36,4 +36,36 @@
     row.classList.add('is-collapsible');
     row.insertBefore(button, panel);
   });
+
+  const experience = document.querySelector('.experience-section');
+  if (!experience) return;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = null;
+
+  function updateReveal() {
+    frame = null;
+    if (reducedMotion.matches) {
+      experience.classList.remove('is-scroll-reveal', 'is-scroll-hidden');
+      return;
+    }
+    const top = experience.getBoundingClientRect().top + window.scrollY;
+    const start = Math.max(0, top - innerHeight * .9);
+    const distance = Math.min(240, innerHeight * .28);
+    const progress = Math.max(0, Math.min(1, (window.scrollY - start) / distance));
+    experience.style.setProperty('--experience-opacity', String(progress));
+    experience.style.setProperty('--experience-shift', `${24 * (1 - progress)}px`);
+    experience.classList.add('is-scroll-reveal');
+    experience.classList.toggle('is-scroll-hidden', progress === 0);
+  }
+
+  function scheduleReveal() {
+    if (frame === null) frame = requestAnimationFrame(updateReveal);
+  }
+  updateReveal();
+  window.addEventListener('scroll', scheduleReveal, { passive: true });
+  window.addEventListener('resize', scheduleReveal, { passive: true });
+  window.addEventListener('pageshow', scheduleReveal);
+  window.addEventListener('load', scheduleReveal);
+  document.fonts.ready.then(scheduleReveal);
+  reducedMotion.addEventListener('change', scheduleReveal);
 })();

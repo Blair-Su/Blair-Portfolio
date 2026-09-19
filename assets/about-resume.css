@@ -131,6 +131,23 @@ body.portfolio-about-page .portfolio-section .is-collapsible .resume-description
   }
   .resume-description-panel { grid-column: 1 / -1; }
 }
+.experience-section.is-scroll-reveal {
+  opacity: var(--experience-opacity, 1);
+}
+.experience-section.is-scroll-reveal > h2,
+.experience-section.is-scroll-reveal > .resume-list {
+  transform: translateY(var(--experience-shift, 0px));
+}
+.experience-section.is-scroll-hidden { pointer-events: none; }
+.experience-section.is-scroll-reveal:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+}
+.experience-section.is-scroll-reveal:focus-within > h2,
+.experience-section.is-scroll-reveal:focus-within > .resume-list { transform: none; }
 @media (prefers-reduced-motion: reduce) {
+  .experience-section.is-scroll-reveal { opacity: 1; pointer-events: auto; }
+  .experience-section.is-scroll-reveal > h2,
+  .experience-section.is-scroll-reveal > .resume-list { transform: none; }
   .resume-description-panel, .resume-description-toggle svg, .resume-description-toggle svg path:last-child { transition: none; }
 }
