@@ -70,6 +70,50 @@ body.portfolio-about-page .portfolio-section .is-collapsible .resume-description
 }
 .resume-description-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
 .resume-description-toggle[aria-expanded="true"] svg path:last-child { transform: rotate(90deg); opacity: 0; }
+/* Align the complete resume list, including its logos, with the intro copy. */
+@media (min-width: 768px) {
+  body.portfolio-about-page #diving-title {
+    font-size: 32px !important;
+  }
+  body.portfolio-about-page :is(.experience-section, .education-section) {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    column-gap: 134px;
+    align-items: start;
+  }
+  body.portfolio-about-page :is(.experience-section, .education-section) > h2 {
+    font-size: 32px !important;
+    margin-bottom: 0 !important;
+  }
+  body.portfolio-about-page :is(.experience-section, .education-section) > .resume-list {
+    min-width: 0;
+  }
+  body.portfolio-about-page .portfolio-section .resume-row.is-collapsible:first-child {
+    padding-top: 0 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  body.portfolio-about-page :is(.experience-section, .education-section) {
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: 78px;
+  }
+  body.portfolio-about-page .portfolio-section .resume-row.is-collapsible {
+    grid-template-columns: 48px minmax(0, 1fr) 44px !important;
+    column-gap: 12px !important;
+  }
+  body.portfolio-about-page .is-collapsible :is(.resume-logo-cell, .resume-logo-frame) {
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    flex-basis: 48px !important;
+  }
+  body.portfolio-about-page .is-collapsible .education-logo-cell.cc-dual .education-logo-frame {
+    width: 35px !important;
+    min-width: 35px !important;
+    height: 35px !important;
+    flex-basis: 35px !important;
+  }
+}
 @media (max-width: 767px) {
   body.portfolio-about-page .portfolio-section .resume-row.is-collapsible {
     grid-template-columns: 48px minmax(0, 1fr) 44px !important;
