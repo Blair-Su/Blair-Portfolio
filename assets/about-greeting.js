@@ -4,6 +4,14 @@
   const icon = button.querySelector('.intro-wave-icon');
   const status = document.querySelector('.intro-wave-status');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const tooltip = document.createElement('span');
+  tooltip.className = 'intro-wave-tooltip';
+  tooltip.id = 'intro-wave-tooltip';
+  tooltip.setAttribute('role', 'tooltip');
+  tooltip.textContent = button.getAttribute('title') || 'Say hi!';
+  button.removeAttribute('title');
+  button.setAttribute('aria-describedby', tooltip.id);
+  button.append(tooltip);
   const clap = document.createElement('span');
   clap.className = 'intro-clap';
   clap.setAttribute('aria-hidden', 'true');
@@ -21,6 +29,22 @@
   let pointerId = null;
   let heldKey = null;
   let ignoreClickUntil = 0;
+  let idleTimer;
+  let inView = false;
+
+  function scheduleWave() {
+    clearTimeout(idleTimer);
+    if (!inView || document.hidden || reducedMotion.matches) return;
+    idleTimer = setTimeout(() => {
+      if (!button.matches(':hover, :focus-visible')) wave();
+      scheduleWave();
+    }, 6000);
+  }
+
+  new IntersectionObserver(([entry]) => {
+    inView = entry.isIntersecting;
+    scheduleWave();
+  }, { threshold: .5 }).observe(button);
 
   function reset() {
     clearTimeout(impactTimer);
@@ -76,8 +100,8 @@
     releaseTimer = setTimeout(reset, delay);
   }
 
-  button.addEventListener('pointerenter', event => {
-    if (event.pointerType === 'touch' || reducedMotion.matches || button.classList.contains('is-clapping')) return;
+  function wave() {
+    if (reducedMotion.matches || button.classList.contains('is-clapping')) return;
     waveAnimation?.cancel();
     waveAnimation = icon.animate([
       { transform: 'rotate(0deg)', offset: 0 },
@@ -85,7 +109,15 @@
       { transform: 'rotate(-4deg)', offset: .76 },
       { transform: 'rotate(0deg)', offset: 1 }
     ], { duration: 900, easing: 'ease-in-out' });
+  }
+
+  button.addEventListener('pointerenter', event => {
+    button.classList.remove('is-tooltip-dismissed');
+    if (event.pointerType === 'touch') return;
+    wave();
+    scheduleWave();
   });
+  button.addEventListener('focus', () => button.classList.remove('is-tooltip-dismissed'));
   button.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0 || heldKey !== null || pointerId !== null) return;
     pointerId = event.pointerId;
@@ -108,6 +140,7 @@
     if (pointerId !== null) cancel();
   });
   button.addEventListener('keydown', event => {
+    if (event.key === 'Escape') button.classList.add('is-tooltip-dismissed');
     if (event.key !== 'Enter' && event.key !== ' ') return;
     event.preventDefault();
     if (event.repeat || heldKey !== null || pointerId !== null) return;
@@ -130,8 +163,10 @@
   window.addEventListener('blur', cancel);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) cancel();
+    scheduleWave();
   });
   reducedMotion.addEventListener('change', event => {
+    scheduleWave();
     if (!event.matches) return;
     cancel();
     window.confetti?.reset();

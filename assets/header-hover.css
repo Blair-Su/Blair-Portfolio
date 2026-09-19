@@ -104,6 +104,10 @@ body:not(.has-header-scroll) .header-blur-layer { opacity: 0 !important; }
 body.has-header-scroll .header-blur-layer { opacity: 1 !important; }
 
 @media screen and (min-width: 768px) {
+  body .portfolio-header :is(.portfolio-header-logo-link, .portfolio-header-liquid, .portfolio-header-resume-link).is-over-white {
+    background: #f5f5f5 !important;
+  }
+
   .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:hover,
   .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:focus-visible,
   body.is-content-scrolled .portfolio-header .portfolio-header-liquid .portfolio-header-nav-link:hover,

@@ -2,11 +2,11 @@
   transition: background-color .18s ease, color .18s ease;
 }
 .framer-project-card:hover :is(.project-lighthouse-desktop, .project-lighthouse-tablet, .project-lighthouse-phone) .f-EO43GQvYU {
-  background: #fff;
+  background: #ffc928;
   --node-border: 1px solid #ffc928;
 }
 .framer-project-card:hover :is(.project-lighthouse-desktop, .project-lighthouse-tablet, .project-lighthouse-phone) .f-KfZZuIyZp {
-  color: #ffc928;
+  color: #fff;
 }
 
 /* Keep the desktop illustration together as the card grows beyond its 960px master. */
@@ -66,6 +66,11 @@
   visibility: visible;
   transition: none;
   z-index: 1;
+}
+
+.project-hhi-desktop:is(:hover, .is-active) .f-itNtE5g_2,
+.framer-project-card:focus-visible .project-hhi-desktop .f-itNtE5g_2 {
+  color: rgba(17, 17, 17, .56);
 }
 
 /* Keep the scene, foreground car, and rotated fade in the same right-aligned space. */
@@ -149,6 +154,39 @@
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Keep desktop tags below the copy without shifting the existing title or arrow. */
+.framer-project-card .project-desktop [data-layer="Subtitle"] {
+  font-size: 18px;
+}
+.project-desktop .project-tags {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  font-family: Geist, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #626262;
+}
+.project-desktop .project-tag {
+  padding: 3px 8px;
+  border: 1px solid rgba(17, 17, 17, .14);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .55);
+  white-space: nowrap;
+  transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+}
+.project-southern-desktop:is(:hover, .is-active) .project-tag,
+.framer-project-card:focus-visible .project-southern-desktop .project-tag {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, .1);
 }
 
 /* Match Southern Crafted's mobile copy and arrow alignment across all four cards. */

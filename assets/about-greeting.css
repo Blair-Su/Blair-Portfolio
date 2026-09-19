@@ -26,6 +26,25 @@
   -webkit-user-select: none;
 }
 .intro-wave-button:focus-visible { outline: 2px solid #62c9f8; outline-offset: 3px; }
+.intro-wave-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #626262;
+  font: 400 12px/18px Geist, Arial, sans-serif;
+  white-space: nowrap;
+  visibility: hidden;
+  z-index: 2;
+}
+@media (hover: hover) {
+  .intro-wave-button:hover:not(.is-tooltip-dismissed) .intro-wave-tooltip { visibility: visible; }
+}
+.intro-wave-button:focus-visible:not(.is-tooltip-dismissed) .intro-wave-tooltip { visibility: visible; }
 .intro-wave-icon {
   display: block;
   width: 30px;
