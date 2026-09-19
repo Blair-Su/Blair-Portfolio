@@ -57,10 +57,10 @@
       const hhiRect = hhiCard?.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const resumeOverHhi = surface.matches('.portfolio-header-resume-link') && hhiRect &&
+      const navigationOverHhi = surface.matches('.portfolio-header-liquid, .portfolio-header-resume-link') && hhiRect &&
         centerX >= hhiRect.left && centerX <= hhiRect.right &&
         centerY >= hhiRect.top && centerY <= hhiRect.bottom;
-      const white = desktop.matches && rect.width > 0 && (resumeOverHhi || [.15, .5, .85].every(position =>
+      const white = desktop.matches && rect.width > 0 && (navigationOverHhi || [.15, .5, .85].every(position =>
         isWhiteAt(rect.left + rect.width * position, rect.top + rect.height / 2)
       ));
       surface.classList.toggle('is-over-white', white);
